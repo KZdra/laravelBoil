@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+
 class UserController extends Controller
 {
     public function index()
@@ -49,9 +50,8 @@ class UserController extends Controller
             $data = [
                 'role_id' => $request->role_id,
                 'name' => $request->nama,
-                'password' => $request->password,
+                'username' => $request->username,
             ];
-
             if ($request->filled('password')) {
                 $data['password'] = Hash::make($request->password);
             }
@@ -60,6 +60,7 @@ class UserController extends Controller
 
             return response()->json(['message' => 'User berhasil diUpdate!'], 200);
         } catch (\Exception $e) {
+
             return response()->json(['message' => 'Ada Masalah Diantara Input/Server'], 500);
         }
     }
