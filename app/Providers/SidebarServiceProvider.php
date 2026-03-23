@@ -26,6 +26,7 @@ class SidebarServiceProvider extends ServiceProvider
                     'route' => 'dashboard',
                     'icon' => 'fas fa-th',
                     'label' => __('Dashboard'),
+                    // roles=>['admin','user']
                 ],
 
             ];
